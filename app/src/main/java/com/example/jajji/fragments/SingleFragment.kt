@@ -45,7 +45,7 @@ class SingleFragment : Fragment() {
 
             back.setOnClickListener {
                 findNavController().popBackStack()
-                val fab = requireActivity().findViewById<FloatingActionButton>(R.id.fab)
+               // val fab = requireActivity().findViewById<FloatingActionButton>(R.id.fab)
 
              //   (activity as MainActivity).showBottom()
 
@@ -57,7 +57,7 @@ class SingleFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        val fab = requireActivity().findViewById<FloatingActionButton>(R.id.fab)
+       // val fab = requireActivity().findViewById<FloatingActionButton>(R.id.fab)
 
        // (activity as MainActivity).showBottom()
     }

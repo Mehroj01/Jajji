@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.jajji.MainActivity
 
 import com.example.jajji.adapters.MainAdapter
-import com.example.jajji.adapters.SecondAdapter
+
 
 import com.example.jajji.model.Furniture
 import com.example.jajji.R
@@ -34,7 +34,6 @@ class HomeFragment : Fragment() {
     }
 
     private lateinit var mainAdapter: MainAdapter
-    private lateinit var secondAdapter: SecondAdapter
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     override fun onCreateView(
@@ -79,36 +78,20 @@ class HomeFragment : Fragment() {
         mainAdapter = MainAdapter(furList,
             object : MainAdapter.OnImageClick {
                 override fun click(furniture: Furniture) {
-                    val fab = requireActivity().findViewById<FloatingActionButton>(R.id.fab)
+
                     val bundle = Bundle()
                     bundle.putSerializable("fur", furniture)
                     (activity as MainActivity).hideBottom()
-                    fab.visibility = View.GONE
                     findNavController().navigate(R.id.action_homeFragment_to_singleFragment, bundle)
                 }
 
                 override fun shopClick(furniture: Furniture) {
                     val bundle = Bundle()
-                    val fab = requireActivity().findViewById<FloatingActionButton>(R.id.fab)
-                    bundle.putSerializable("fur", furniture)
-                    (activity as MainActivity).hideBottom()
-                    fab.visibility = View.GONE
-                    findNavController().navigate(R.id.action_homeFragment_to_singleFragment, bundle)
+
                 }
 
             })
-        secondAdapter = SecondAdapter(furList,
-            object : SecondAdapter.OnImageClick {
-                override fun click(furniture: Furniture) {
-                    val fab = requireActivity().findViewById<FloatingActionButton>(R.id.fab)
-                    val bundle = Bundle()
-                    bundle.putSerializable("fur", furniture)
-                    (activity as MainActivity).hideBottom()
-                    fab.visibility = View.GONE
-                    findNavController().navigate(R.id.action_homeFragment_to_singleFragment, bundle)
-                }
 
-            })
     }
 
     override fun onDestroyView() {
