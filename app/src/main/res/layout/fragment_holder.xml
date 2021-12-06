@@ -22,23 +22,4 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/drawerLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:background="@color/white"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/header_layout">
-
-        <ExpandableListView
-            android:id="@+id/expandableListView"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="192dp"
-            android:background="@android:color/white" />
-
-    </com.google.android.material.navigation.NavigationView>
-
-
 </androidx.drawerlayout.widget.DrawerLayout>

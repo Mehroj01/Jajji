@@ -8,7 +8,7 @@ import com.example.jajji.model.Furniture
 
 class SecondAdapter(
     private val dataSet: MutableList<Furniture>,
-    val listener: OnImageClick
+    private val listener: OnImageClick
 ) :
     RecyclerView.Adapter<SecondAdapter.ViewHolder>() {
 

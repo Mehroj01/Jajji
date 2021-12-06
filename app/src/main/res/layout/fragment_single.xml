@@ -6,41 +6,56 @@
     android:layout_height="match_parent"
     tools:context=".fragments.SingleFragment">
 
-    <ImageView
-        android:id="@+id/back"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginBottom="18dp"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/ic_baseline_arrow_back_ios_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_margin="18dp"
-        android:backgroundTint="@color/white"
-        app:cardCornerRadius="30dp"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/back_card"
+        android:layout_width="@dimen/_28sdp"
+        android:elevation="0dp"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_margin="@dimen/_18sdp"
+        app:cardCornerRadius="@dimen/_6sdp"
         app:cardUseCompatPadding="true"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/back"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="@dimen/_28sdp"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_marginEnd="@dimen/_18sdp"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="@dimen/_6sdp"
+       app:cardUseCompatPadding="true"
+        android:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/back_card"
+        app:layout_constraintTop_toTopOf="@+id/back_card">
+
+        <com.like.LikeButton
             android:id="@+id/save"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="6dp"
-            android:src="@drawable/save_" />
-    </androidx.cardview.widget.CardView>
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_4sdp"
+            android:src="@drawable/save_"
+            app:icon_size="@dimen/_20sdp"
+            app:icon_type="heart" />
+    </com.google.android.material.card.MaterialCardView>
 
     <ImageView
         android:id="@+id/image"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="@dimen/_200sdp"
         android:layout_margin="18dp"
         android:layout_marginTop="10dp"
         android:src="@drawable/download"
@@ -110,7 +125,8 @@
         android:background="@drawable/custom_card"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="-96dp">
 
         <ImageView
             android:layout_width="24dp"

@@ -46,10 +46,6 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
     implementation 'com.google.firebase:firebase-storage-ktx:20.0.0'
-    implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.google.firebase:firebase-database-ktx:20.0.3'
-    implementation 'com.google.firebase:firebase-firestore-ktx:24.0.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
@@ -65,6 +61,12 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation platform('com.google.firebase:firebase-bom:29.0.1')
 
-    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    // scalable views
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+
+    // like button
+    implementation 'com.github.jd-alexander:LikeButton:0.2.3'
+
+
 }

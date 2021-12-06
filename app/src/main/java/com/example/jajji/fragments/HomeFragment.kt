@@ -1,7 +1,6 @@
 package com.example.jajji.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -18,8 +17,6 @@ import com.example.jajji.model.Furniture
 import com.example.jajji.R
 import com.example.jajji.databinding.FragmentHomeBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import java.text.SimpleDateFormat
-import java.util.*
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -46,23 +43,11 @@ class HomeFragment : Fragment() {
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-
-        val currentTimeMillis = System.currentTimeMillis()
-        val simpleDateFormat = SimpleDateFormat("MM.dd.yyyy HH:mm")
-        val resultDate = Date(currentTimeMillis)
-        Log.d("AAA", "onCreateView: ${simpleDateFormat.format(resultDate)}")
-
         loadData()
         binding.apply {
             mainRv.adapter = mainAdapter
-            secondRv.adapter = secondAdapter
-            menu.setOnClickListener {
-                val drawer = requireActivity().findViewById<DrawerLayout>(R.id.drawer)
-                drawer.openDrawer(GravityCompat.START)
+           // secondRv.adapter = secondAdapter
 
-
-
-            }
         }
 
         return binding.root
