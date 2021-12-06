@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/types"
+        android:title="Mahsulotlarimiz">
+        <menu>
+            <item
+                android:id="@+id/krovat"
+                android:title="Krovatlar" />
+            <item
+                android:id="@+id/stol"
+                android:title="Stol Stullar" />
+
+        </menu>
+    </item>
+</menu>
