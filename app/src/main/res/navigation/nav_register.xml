@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_register"
+    app:startDestination="@id/registerHomeFragment">
+
+    <fragment
+        android:id="@+id/registerHomeFragment"
+        android:name="com.example.jajji.fragments.register.RegisterHomeFragment"
+        android:label="fragment_register_home"
+        tools:layout="@layout/fragment_register_home" >
+        <action
+            android:id="@+id/action_registerHomeFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.jajji.fragments.register.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+</navigation>
