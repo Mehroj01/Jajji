@@ -6,34 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".fragments.HomeFragment">
 
-
-
-
-
-
-    <nl.joery.animatedbottombar.AnimatedBottomBar
-        android:id="@+id/bottom_bar"
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/btmBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:abb_iconSize="@dimen/_16sdp"
-        app:abb_indicatorAppearance="round"
-        app:abb_indicatorHeight="4dp"
-        app:abb_indicatorLocation="bottom"
-        app:abb_indicatorMargin="16dp"
-        app:abb_selectedIndex="0"
-        app:abb_selectedTabType="text"
-        app:abb_tabs="@menu/menu_bottom_bar"
-        android:visibility="gone"/>
+        android:layout_gravity="bottom"
+        android:backgroundTint="@android:color/background_light"
+        app:menu="@menu/bottom_menu"
+        app:navigationIcon="@drawable/ic_baseline_home_24" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="match_parent"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:menu="@menu/menu_bottom_bar"
-        android:background="@drawable/back_bottom"
-        app:labelVisibilityMode="unlabeled"
-        app:itemIconSize="@dimen/_16sdp"
-        />
+        android:backgroundTint="@color/main"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/ic_baseline_shop_24"
+        app:layout_anchor="@id/btmBar"
+        app:tint="@color/white" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -63,14 +53,32 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/main_rv"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="@dimen/_46sdp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginTop="@dimen/_38sdp"
+            android:layout_height="220dp"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@+id/search" />
 
+        <TextView
+            android:id="@+id/best"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/best_selling"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/main_rv" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/second_rv"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/best" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
