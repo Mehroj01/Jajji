@@ -2,17 +2,15 @@ package com.example.jajji.fragments.register
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.example.jajji.MainActivity
-import com.example.jajji.R
 import com.example.jajji.databinding.FragmentAboutBinding
 import com.example.jajji.model.User
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 
 private const val ARG_PARAM1 = "param1"
@@ -45,13 +43,22 @@ class AboutFragment : Fragment() {
         val currentUser = FirebaseAuth.getInstance().currentUser
         binding.apply {
             btn.setOnClickListener {
-                val toString = edName.text.toString()
-                if (toString == "") {
+                val name = edName.text.toString()
+                val surName = edName.text.toString()
+
+                if (name == "" || surName == "") {
                     Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show()
                 } else {
                     firebaseFireStore.collection("users")
                         .document(id)
-                        .set(User(param1, "Jim", "Kerry"))
+                        .set(
+                            User(
+                                param1,
+                                name,
+                                surName,
+                                param2.toString()
+                            )
+                        )
                         .addOnSuccessListener {
                             if (currentUser != null) {
                                 val intent = Intent(requireContext(), MainActivity::class.java)
