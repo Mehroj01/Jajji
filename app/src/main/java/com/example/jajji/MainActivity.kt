@@ -26,13 +26,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun hideBottom() {
-        val btm = findViewById<BottomAppBar>(R.id.btmBar)
-        btm.visibility = View.GONE
+       // val btm = findViewById<BottomAppBar>(R.id.btmBar)
+        //btm.visibility = View.GONE
     }
 
     fun showBottom() {
-        val btm = findViewById<BottomAppBar>(R.id.btmBar)
-        btm.visibility = View.VISIBLE
+       // val btm = findViewById<BottomAppBar>(R.id.btmBar)
+       // btm.visibility = View.VISIBLE
     }
 
     override fun onNavigateUp(): Boolean = findNavController(R.id.nav_controller).navigateUp()

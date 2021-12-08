@@ -38,9 +38,7 @@ class SingleFragment : Fragment() {
             name.text = fur!!.name
             costs.text = fur!!.costs
             image.setImageResource(fur!!.image)
-            linear.setOnClickListener {
-                Toast.makeText(requireContext(), "Loading", Toast.LENGTH_SHORT).show()
-            }
+
 
 
             back.setOnClickListener {

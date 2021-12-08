@@ -9,9 +9,9 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/back_card"
         android:layout_width="@dimen/_28sdp"
-        android:elevation="0dp"
         android:layout_height="@dimen/_28sdp"
         android:layout_margin="@dimen/_18sdp"
+        android:elevation="0dp"
         app:cardCornerRadius="@dimen/_6sdp"
         app:cardUseCompatPadding="true"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,11 +34,11 @@
         android:layout_height="@dimen/_28sdp"
         android:layout_marginEnd="@dimen/_18sdp"
         android:backgroundTint="@color/white"
-        app:cardCornerRadius="@dimen/_6sdp"
-       app:cardUseCompatPadding="true"
         android:elevation="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="@dimen/_6sdp"
+        app:cardUseCompatPadding="true"
         app:layout_constraintBottom_toBottomOf="@+id/back_card"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/back_card">
 
         <com.like.LikeButton
@@ -49,7 +49,9 @@
             android:layout_margin="@dimen/_4sdp"
             android:src="@drawable/save_"
             app:icon_size="@dimen/_20sdp"
-            app:icon_type="heart" />
+            app:icon_type="heart"
+            app:like_drawable="@drawable/ic_baseline_favorite_24"
+            app:unlike_drawable="@drawable/ic_baseline_favorite_border_24" />
     </com.google.android.material.card.MaterialCardView>
 
     <ImageView
@@ -118,28 +120,5 @@
         app:layout_constraintStart_toStartOf="@id/costs"
         app:layout_constraintTop_toBottomOf="@+id/costs" />
 
-    <LinearLayout
-        android:id="@+id/linear"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/custom_card"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="-96dp">
 
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_baseline_shopping_cart_24" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/add_to_cart"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="normal" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

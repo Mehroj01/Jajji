@@ -33,5 +33,8 @@
     <string name="add_to_cart">ADD TO CART</string>
 
     <string name="quantity">Quantity:</string>
+    <string name="liked">Like</string>
+    <string name="home">Home</string>
+    <string name="_2000">2000$</string>
 
 </resources>

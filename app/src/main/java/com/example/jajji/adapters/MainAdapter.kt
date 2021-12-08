@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 
 import com.example.jajji.databinding.NewFurBinding
 import com.example.jajji.model.Furniture
+import com.like.LikeButton
+import com.like.OnLikeListener
 
 class MainAdapter(private val dataSet: MutableList<Furniture>, private val listener: OnImageClick) :
     RecyclerView.Adapter<MainAdapter.ViewHolder>() {
@@ -38,9 +40,17 @@ class MainAdapter(private val dataSet: MutableList<Furniture>, private val liste
         holder.itemView.setOnClickListener {
             listener.click(dataSet[position])
         }
-        holder.binding.shp.setOnClickListener {
-            listener.shopClick(dataSet[position])
-        }
+        holder.binding.name.text = dataSet[position].name
+        holder.binding.save.setOnLikeListener(object : OnLikeListener {
+            override fun liked(likeButton: LikeButton?) {
+
+            }
+
+            override fun unLiked(likeButton: LikeButton?) {
+
+            }
+
+        })
 
 
     }

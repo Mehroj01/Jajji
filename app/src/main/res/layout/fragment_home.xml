@@ -1,84 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragments.HomeFragment">
 
-    <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/btmBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:backgroundTint="@android:color/background_light"
-        app:menu="@menu/bottom_menu"
-        app:navigationIcon="@drawable/ic_baseline_home_24" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/main"
-        android:contentDescription="@string/todo"
-        android:src="@drawable/ic_baseline_shop_24"
-        app:layout_anchor="@id/btmBar"
-        app:tint="@color/white" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingStart="8dp">
-
-        <ImageView
-            android:id="@+id/menu"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="18dp"
-            android:src="@drawable/ic_baseline_notes_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/search"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_margin="18dp"
-            android:src="@drawable/search"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/main_rv"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:layout_marginTop="50dp"
-            android:orientation="horizontal"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_38sdp"
+            android:layout_marginBottom="@dimen/_46sdp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toBottomOf="@+id/search" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/best"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="@string/best_selling"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            app:layout_constraintTop_toBottomOf="@+id/main_rv" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/second_rv"
-            android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toBottomOf="@+id/best" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <me.ibrahimsn.lib.SmoothBottomBar
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/btm_shape"
+        app:backgroundColor="@color/background_color"
+        app:menu="@menu/bottom_menu"
+        />
 
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</RelativeLayout>
